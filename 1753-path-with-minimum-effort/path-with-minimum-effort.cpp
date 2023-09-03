@@ -18,11 +18,10 @@ public:
             
             if(nr >= 0 && nr < heights.size() && 
                nc >= 0 && nc < heights[0].size() && 
-               abs(heights[r][c] - heights[nr][nc]) <= diff && 
                path[nr][nc] == false)
             {
                 
-                if(dfs(diff, heights, path, nr, nc) == true) return true;
+                if(abs(heights[r][c] - heights[nr][nc]) <= diff && dfs(diff, heights, path, nr, nc) == true) return true;
                 
             }
         }

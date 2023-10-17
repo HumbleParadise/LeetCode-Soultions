@@ -5,7 +5,7 @@ class Solution {
     }
     
 private:
-     int dp[650][101][101];
+     int dp[601][101][101];
     
 public:
     int dfs(vector<string>&strs, int idx, int cnt_zero, int cnt_one)

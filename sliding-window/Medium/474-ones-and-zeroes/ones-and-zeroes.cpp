@@ -46,11 +46,6 @@ public:
         
         return dfs(strs, 0, m, n);
         
-        // for(int i=0;i<strs.size();i++)
-        // {
-        //     ans = max(ans, dfs(strs, i, m, n));
-        // }
-        // return ans;
         
     }
 };

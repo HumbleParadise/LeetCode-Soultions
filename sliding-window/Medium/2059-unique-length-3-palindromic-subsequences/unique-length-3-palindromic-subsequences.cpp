@@ -4,7 +4,10 @@ public:
         // how to get susbequence without generating all possible combinations
         // start and end and just check the ele between them    
         
-        map<char, int> Mp;
+        // try'n optimise it.
+        
+        /*
+        unordered_map<char, int> Mp;
         int cnt = 0;
         
         for(int i=0;i<s.length();i++)
@@ -39,8 +42,35 @@ public:
             }
         }
         
+        */
+        
         // for(auto ite: Mp) cout << ite.first << " " << ite.second << endl;
-        return cnt;
+        // return cnt;
+        
+        // /*
+        
+        // just include unique ele between first and last ele 
+        
+        int ans = 0;
+        map<char, int> Mp;
+        for(int i=0;i<s.length();i++)
+        {
+            if(Mp[s[i]] == 0)
+            {
+                int start = i, end = s.rfind(s[i]);
+                Mp[s[i]] = 1;
+                if(end - start + 1 >= 3)
+                {
+                    ans += unordered_set<char>(s.begin() + i + 1, s.begin() + end).size(); // include all ele between them
+                    // ans += temp.size();
+                }   
+            }
+        
+        }
+        
+        return ans;
+        
+        // */
         
     }
 };
